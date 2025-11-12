@@ -1,16 +1,23 @@
+:root{
+    --border: 1px solid rgb(0 0 0 /0.4);
+    --padding: 15p;
+    --heading-font: 'Montserrat', Helvetica, sans-serif;
+}
+
 main{
     max-width: 840px;
+    font-family: var(--heading-font);
 }
 
 nav{
     background-color: darkblue;
-    padding: 10px;
+    padding: var(--padding);
 }
 
 nav a{
     color: white;
     display: block;
-    padding: 20px;
+    padding: var(--padding);
 }
 
 h1{
@@ -20,7 +27,7 @@ h1{
 main img{
     width: 150px;
     height: auto;
-    border: 1px solid black;
+    border: var(--border);
     padding: 2px;
     box-shadow: 0 0 30px gray;
 }
@@ -32,11 +39,12 @@ p{
 aside{
     width: 20rem;
     margin: 1rem;
-    border: 1px solid rgb(0 0 0 /0.4);
+    border: var(--border);
     padding: 1rem;
     background-color: #eee ;
     color: #333 ;
     text-align: center;
+    font-family: var(--heading-font);
 }
 
 aside img{
@@ -49,3 +57,4 @@ footer{
     border-top: 1px solid #333;
     text-align: center;
 }
+
