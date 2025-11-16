@@ -62,7 +62,7 @@ nav, p, section, article{
 background-color: var(--accent1-color);
 color: white;
 opacity: 0.85;
-position: relative;
+position: absolute;
 bottom: 10px;
 }
 
