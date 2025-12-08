@@ -45,39 +45,42 @@
 
                         <div class="form-row">
                             <label for="name">Name</label>
-                            <input id="name" type="text" placeholder="Placeholder">
+                            <input id="name" name="name" type="text" placeholder="Placeholder">
                         </div>
 
                         <div class="form-row">
                             <label for="email">Email</label>
-                            <input id="email" type="email" placeholder="Placeholder">
+                            <input id="email" name="email" type="email" placeholder="Placeholder">
                         </div>
 
                         <div class="form-row">
                             <label>Message Purpose</label>
                             <div class="radio-group">
-                                <label><input type="radio" name="purpose"> General Inquiry</label>
-                                <label><input type="radio" name="purpose"> Reservation Question</label>
-                                <label><input type="radio" name="purpose"> Website Suggestion</label>
+                                <label><input type="radio" id="purpose1" name="purpose" value="general"> General
+                                    Inquiry</label>
+                                <label><input type="radio" id="purpose2" name="purpose" value="reservation"> Reservation
+                                    Question</label>
+                                <label><input type="radio" id="purpose3" name="purpose" value="suggestion"> Website
+                                    Suggestion</label>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <label for="message">Message</label>
-                            <textarea id="message" placeholder="Type here."></textarea>
+                            <textarea id="message" name="message" placeholder="Type here."></textarea>
                         </div>
 
                         <div class="form-row checkbox-row">
                             <label></label>
                             <label class="checkbox-label">
-                                <input type="checkbox">
+                                <input id="subscribe" name="subscribe" type="checkbox">
                                 Please Subscribe me to the monthly newsletter
                             </label>
                         </div>
 
                         <div class="form-row">
                             <label></label>
-                            <button class="submit-btn">Get in Touch!</button>
+                            <button type="submit" class="submit-btn">Get in Touch!</button>
                         </div>
 
                     </form>
