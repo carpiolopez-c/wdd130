@@ -1,71 +1,162 @@
-:root{
-    --primary-color:#0077b6; /* deep river blue */
-    --secondary-color:#90e0ef; /* light aqua */
-    --accent1-color: #023e8a;   /* bold navy */
-    --accent2-color: #f4a261;   /* warm sand */
-    --heading-font:"Times New Roman", "Georgia", serif;
-    --body-font:Arial, Helvetica, sans-serif;
+
+:root {
+    --primary-color: #0077b6;
+    --secondary-color: #90e0ef;
+    --accent1-color: #023e8a;
+    --accent2-color: #f4a261;
+    --heading-font: "Times New Roman", Georgia, serif;
+    --body-font: Arial, Helvetica, sans-serif;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: var(--body-font);
     color: var(--accent1-color);
+    background: linear-gradient(
+        to bottom,
+        #f8fdff,
+        #cff5ff,
+        #ccf5ff
+    );
 }
 
-header, main, footer{
-    width: 840px;
+header, main, footer {
+    width: 100%;
+    max-width: 840px;
     margin: 0 auto;
 }
 
-.grid{
+
+.grid {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: max-content 1fr;
     align-items: center;
     padding: 1rem;
+    gap: 1rem;
 }
 
-.logo{
+.logo {
     max-height: 100px;
-
 }
 
-h1, h2{
-    font-family: var(--heading-font);
-    color: var(--primary-color)
-}
-
-nav, p, section, article{
-    margin: 16px;
-    padding: 8px;
-}
-
-nav{
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
     font-size: 1.3rem;
     font-weight: 700;
 }
 
-.socialmedia a{
+nav a {
     text-decoration: none;
+    color: var(--accent1-color);
+    transition: 0.2s;
 }
 
-.hero{
+nav a:hover {
+    color: var(--primary-color);
+}
+
+
+h1, h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+h2 {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: var(--accent1-color);
+    color: var(--accent2-color);
+}
+
+p, section, article {
+    margin: 16px;
+    padding: 8px;
+}
+
+
+.hero {
     position: relative;
 }
 
-.hero img{
+.hero img {
     display: block;
     width: 100%;
     height: auto;
 }
+
+.hero h1 {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: var(--accent1-color);
+    color: var(--secondary-color);
+    opacity: 0.85;
+}
+
+.hero article {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    background-color: var(--accent1-color);
+    color: white;
+    padding: 10px;
+    opacity: 0.85;
+}
+
+.hero article img {
+    float: right;
+    width: 125px;
+    height: auto;
+}
+
+.history-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.history-image img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+}
+
+
+.adventures {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.adventures figure {
+    flex: 1 1 180px;
+    max-width: 220px;
+    text-align: center;
+}
+
+.adventures img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.adventures figcaption {
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
 
 .contact {
     text-align: center;
@@ -77,7 +168,6 @@ nav{
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 5px;
-    align-items: start;
     margin-top: 20px;
 }
 
@@ -88,188 +178,151 @@ nav{
 }
 
 .iframe-container {
-    position: relative;
     width: 100%;
     height: 100%;
 }
 
-.form-container{
+.form-container {
     width: 100%;
 }
 
 .contact-form {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  font-family: Arial, sans-serif;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .form-row {
-  display: grid;
-  grid-template-columns: 130px 1fr;
-  align-items: start;
-  margin-bottom: 14px;
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    margin-bottom: 14px;
 }
 
 .form-row label {
-  font-weight: 600;
-  padding-right: 10px;
-  text-align: right;
-  margin-top: 6px;
+    font-weight: 600;
+    padding-right: 10px;
+    text-align: right;
+    margin-top: 6px;
 }
 
 input[type="text"],
 input[type="email"],
 textarea {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
 }
 
 textarea {
-  height: 80px;
+    height: 80px;
 }
 
 .radio-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-top: 4px;
-}
-
-.radio-group label {
-  font-weight: normal;
-  text-align: left;
-}
-
-.checkbox-row {
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .checkbox-label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 14px;
-  margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
+/* Buttons */
 .submit-btn {
-  width: 100%;
-  padding: 10px;
-  font-weight: bold;
-  border: 1px solid #ccc;
-  background: #f3f3f3;
-  cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    background: #f3f3f3;
+    cursor: pointer;
 }
 
 .employee-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 2rem;
 }
 
 .employee-container figure {
-  flex: 1 1 calc(20% - 1rem);
-  text-align: center;
+    flex: 1 1 180px;
+    max-width: 220px;
+    text-align: center;
 }
 
 .employee-container img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 0.5rem;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-.employee-container figcaption {
-  margin-top: 0.5rem;
-  font-weight: bold;
+.main-trip {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
 }
 
-.hero h1{
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    padding: 10px;
+.trip-card{
+    flex: 1 1 180px;
+    max-width: 220px;
     text-align: center;
-    opacity: 0.8;
+}
+
+.trip-card img{
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.trip-table{
+  margin: 0 auto;
+  width: 100%;
+}
+ 
+thead.table-info th {
     background-color: var(--accent1-color);
     color: var(--secondary-color);
+    font-family: var(--heading-font);
+    font-size: 1.2rem;
+    padding: 12px;
 }
 
-.hero article{
-    background-color: var(--accent1-color);
-    color: white;
-    opacity: 0.85;
-    position: absolute;
-    bottom: 150px;
-}
-
-.hero article img{
-    float: right;
-    width: 125px;
-    height: auto;
-    }
-
-h2{
-    width: 100%;
+tbody.table-info td {
     padding: 10px;
+    border-bottom: 1px solid #ddd;
+    color: var(--accent1-color);
     text-align: center;
-    background-color: var(--accent1-color);
-    color: var(--accent2-color);
 }
 
-.history-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
+tbody.table-info tr:nth-child(even) {
+    background-color: #f7f7f7;
 }
 
-.history-image img {
-    width: 200px;
-    height: auto;
-    display: block;
+tbody.table-info tr:hover {
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
 }
 
-.adventures {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 2rem;
-}
-
-.adventures figure {
-  flex: 1 1 calc(20% - 1rem);
-  text-align: center;
-}
-
-.adventures img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-}
-
-.adventures figcaption {
-  margin-top: 0.5rem;
-  font-weight: bold;
-}
-
-footer{
+footer {
     border-top: 1px solid black;
     margin-bottom: 15px;
+    padding-top: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-align: center;
 }
 
 footer p {
     margin: 0;
-    text-align: center;
     flex: 1;
 }
 
@@ -280,5 +333,4 @@ footer .socialmedia {
 
 footer .socialmedia img {
     width: 40px;
-    height: auto;
 }
